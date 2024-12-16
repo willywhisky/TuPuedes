@@ -6,86 +6,78 @@
     <title>Mensaje de Apoyo</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             height: 100vh;
-            margin: 0;
-            background-color: #1a1a1d;
-            font-family: 'Arial', sans-serif;
+            background: #1a1a1d;
             overflow: hidden;
             color: #e6e6e6;
         }
 
-        .flower-bouquet {
+        .bouquet {
             position: relative;
             width: 200px;
-            height: 300px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-end;
+            height: 400px;
             animation: offer 3s ease-out forwards;
         }
 
-        .flower-bouquet .stem {
+        .stem {
             position: absolute;
-            width: 10px;
-            height: 150px;
-            background-color: #2ecc71;
-            bottom: 0;
-            border-radius: 5px;
-        }
-
-        .flower {
-            position: relative;
-            width: 60px;
-            height: 60px;
-            margin: 5px;
-        }
-
-        .flower .petal {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background-color: #e74c3c;
-            border-radius: 50%;
-        }
-
-        .flower .petal:nth-child(1) {
-            top: 0;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(45deg);
-        }
-
-        .flower .petal:nth-child(2) {
-            top: 0;
-            right: 50%;
-            transform: translate(50%, -50%) rotate(-45deg);
-        }
-
-        .flower .petal:nth-child(3) {
-            bottom: 0;
-            right: 50%;
-            transform: translate(50%, 50%) rotate(45deg);
-        }
-
-        .flower .petal:nth-child(4) {
             bottom: 0;
             left: 50%;
-            transform: translate(-50%, 50%) rotate(-45deg);
-        }
-
-        .flower .center {
-            position: absolute;
+            transform: translateX(-50%);
             width: 20px;
-            height: 20px;
-            background-color: #f1c40f;
+            height: 300px;
+            background: #27ae60;
+            border-radius: 10px;
+        }
+
+        .rose {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #e74c3c 60%, transparent 61%);
             border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .rose:before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #c0392b 60%, transparent 61%);
+            border-radius: 50%;
+            animation: spin 6s linear infinite;
+        }
+
+        .rose:nth-child(1) {
+            top: 50px;
+            left: 20px;
+        }
+
+        .rose:nth-child(2) {
+            top: 20px;
+            left: 80px;
+        }
+
+        .rose:nth-child(3) {
+            top: 40px;
+            right: 20px;
+        }
+
+        .rose:nth-child(4) {
+            top: 100px;
+            left: 0px;
+        }
+
+        .rose:nth-child(5) {
+            top: 100px;
+            right: 40px;
         }
 
         .message {
@@ -131,16 +123,12 @@
             }
         }
 
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
             }
-            50% {
-                transform: translateY(-10px);
+            100% {
+                transform: rotate(360deg);
             }
         }
 
@@ -196,30 +184,19 @@
     </script>
 </head>
 <body>
-    <div class="flower-bouquet">
+    <div class="bouquet">
         <div class="stem"></div>
-        <div class="flower">
-            <div class="petal"></div>
-            <div class="petal"></div>
-            <div class="petal"></div>
-            <div class="petal"></div>
-            <div class="center"></div>
-        </div>
-        <div class="flower">
-            <div class="petal"></div>
-            <div class="petal"></div>
-            <div class="petal"></div>
-            <div class="petal"></div>
-            <div class="center"></div>
-        </div>
-        <div class="flower">
-            <div class="petal"></div>
-            <div class="petal"></div>
-            <div class="petal"></div>
-            <div class="petal"></div>
-            <div class="center"></div>
-        </div>
+        <div class="rose"></div>
+        <div class="rose"></div>
+        <div class="rose"></div>
+        <div class="rose"></div>
+        <div class="rose"></div>
     </div>
+    <div class="message">Se que ha sido un día duro pero todo va a merecer la pena</div>
+    <div class="secondary-message">Siempre estoy contigo</div>
+</body>
+</html>
+
 
     <div class="message">Se que ha sido un día duro pero todo va a merecer la pena</div>
     <div class="secondary-message">Siempre estoy contigo</div>
